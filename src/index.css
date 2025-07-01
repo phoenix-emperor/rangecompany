@@ -6,10 +6,16 @@
   :root {
     --foreground-rgb: 0, 0, 0;
     --background-rgb: 255, 255, 255;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
   }
   .dark {
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 0, 0, 0;
+    --text-primary: #ffffff;
+    --text-secondary: #e5e7eb;
+    --text-muted: #9ca3af;
   }
   body {
     color: rgb(var(--foreground-rgb));
@@ -18,6 +24,16 @@
 }
 
 @layer components {
+  .text-primary {
+    color: var(--text-primary);
+  }
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  .text-muted {
+    color: var(--text-muted);
+  }
+
   .btn-primary {
     @apply px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors duration-200;
   }

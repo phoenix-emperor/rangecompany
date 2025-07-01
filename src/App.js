@@ -23,9 +23,15 @@ function App() {
     }
   });
 
+  // Update theme when isDarkMode changes
   React.useEffect(() => {
     localStorage.setItem('theme', JSON.stringify(isDarkMode));
     document.documentElement.classList.toggle('dark', isDarkMode);
+    
+    // Update text colors for better contrast
+    document.documentElement.style.setProperty('--text-primary', isDarkMode ? '#ffffff' : '#1a1a1a');
+    document.documentElement.style.setProperty('--text-secondary', isDarkMode ? '#e5e7eb' : '#6b7280');
+    document.documentElement.style.setProperty('--text-muted', isDarkMode ? '#9ca3af' : '#9ca3af');
   }, [isDarkMode]);
 
   return (

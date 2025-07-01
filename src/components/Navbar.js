@@ -12,8 +12,6 @@ const navigation = [
 ];
 
 export default function Navbar({ isDarkMode, toggleTheme }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-
   return (
     <motion.nav
       className="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-50"
@@ -39,45 +37,16 @@ export default function Navbar({ isDarkMode, toggleTheme }) {
               </Link>
             ))}
           </div>
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             <button
               onClick={toggleTheme}
               className="p-2 rounded-md text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-white"
             >
               {isDarkMode ? '☀️' : '🌙'}
             </button>
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 dark:hover:bg-gray-700 dark:hover:text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <span className="sr-only">Open main menu</span>
-              {mobileMenuOpen ? (
-                <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
+          </div> */}
         </div>
       </div>
-
-      {mobileMenuOpen && (
-        <div className="sm:hidden">
-          <div className="space-y-1 px-2 pb-3 pt-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-700 dark:hover:text-white"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </motion.nav>
   );
 }
