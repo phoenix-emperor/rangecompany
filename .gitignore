@@ -1,0 +1,71 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+/public/build
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+.temp
+*.pem
+*.key
+*.crt
+*.der
+*.jks
+*.p12
+*.pfx
+*.cer
+
+# React specific
+.next/
+.next/
+.next/cache/
+.next/static/
+
+# TailwindCSS
+.tailwindcss-cache/
+
+# Build tools
+*.lock
+yarn.lock
+package-lock.json
+package.json
+
+# Editor
+*.sublime-workspace
+*.sublime-project
