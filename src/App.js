@@ -14,24 +14,12 @@ import './index.css';
 function App() {
   const [isDarkMode, setIsDarkMode] = React.useState(() => {
     const saved = localStorage.getItem('theme');
-    try {
-      return saved ? JSON.parse(saved) : false;
-    } catch (error) {
-      // If there's an error parsing, default to light mode
-      localStorage.removeItem('theme');
-      return false;
-    }
+    return saved ? JSON.parse(saved) : false;
   });
 
-  // Update theme when isDarkMode changes
   React.useEffect(() => {
     localStorage.setItem('theme', JSON.stringify(isDarkMode));
     document.documentElement.classList.toggle('dark', isDarkMode);
-    
-    // Update text colors for better contrast
-    document.documentElement.style.setProperty('--text-primary', isDarkMode ? '#ffffff' : '#1a1a1a');
-    document.documentElement.style.setProperty('--text-secondary', isDarkMode ? '#e5e7eb' : '#6b7280');
-    document.documentElement.style.setProperty('--text-muted', isDarkMode ? '#9ca3af' : '#9ca3af');
   }, [isDarkMode]);
 
   return (
@@ -41,7 +29,7 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={
-              <>
+              <div className="pt-16">
                 <Hero />
                 <About />
                 <CoreValues />
@@ -49,8 +37,12 @@ function App() {
                 <Projects />
                 <Contact />
                 <CTA />
-              </>
+              </div>
             } />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

@@ -2,8 +2,8 @@
 export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html"
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -31,7 +31,10 @@ export default {
           800: '#92400e',
           900: '#78350f',
         }
-      }
+      },
+      backgroundColor: {
+        'primary-dark': '#0284C7',
+      },
     },
   },
   plugins: [],
