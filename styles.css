@@ -581,55 +581,19 @@ section {
 
 .project-card h3,
 .project-card p {
-    color: white;
+    color: var(--text-primary);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Dark mode theme toggle */
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    margin-left: 1rem;
-}
-
-#themeToggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    color: var(--text-primary);
-    transition: color 0.3s;
-}
-
-#themeToggle:hover {
-    color: var(--primary-color);
-}
-
-[data-theme="dark"] #themeToggle {
-    color: var(--text-primary);
-}
-
-#themeToggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    color: var(--text-primary);
-    font-size: 1.25rem;
-    transition: color 0.3s;
-}
-
-#themeToggle:hover {
-    color: var(--primary-color);
-}
-
-[data-theme="dark"] .theme-toggle {
-    background: var(--bg);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-}
-
-[data-theme="dark"] #themeToggle {
-    color: var(--text-primary);
+:root {
+    --primary-color: #0284C7;
+    --primary-dark: #0369A1;
+    --accent-color: #F8FAFC;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --bg: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Additional Scroll Animations */

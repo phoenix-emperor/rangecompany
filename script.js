@@ -46,23 +46,6 @@ const navbarScroll = {
 navbarScroll.init();
 
 // Dark Mode Toggle
-const themeToggle = document.getElementById('themeToggle');
-const htmlElement = document.documentElement;
-
-themeToggle.addEventListener('click', () => {
-    const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-    htmlElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-    
-    // Save preference to localStorage
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-});
-
-// Check for saved theme preference
-const savedTheme = localStorage.getItem('theme') || 'light';
-htmlElement.setAttribute('data-theme', savedTheme);
-themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
